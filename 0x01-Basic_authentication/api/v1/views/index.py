@@ -32,3 +32,11 @@ def unauthorized_route() -> str:
                   - 401 error to trigger the unauthorized handler
     """
     abort(401)
+
+@app_views.route('/forbidden', methods=['GET'], strict_slashes=False)
+def forbidden() -> str:
+    """GET /api/v1/forbidden
+        raises:
+            - 403 trigger for forbidden
+    """
+    abort(403)
